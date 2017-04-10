@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    {{ header | safe }}
+
+    
+    <center>
+      <h1>Register</h1>
+      <a href="/">Back to homepage</a>
+    </center>
+
+    <br />
+    <form action="register" method="post">
+      <table cellspacing="0" class="box" style="width:25%">
+
+	{% if return_code %}
+	<tr><th colspan="2" style="text-align:center;">Error: {{ return_code }}</th></tr>
+	{% endif %}
+
+	<tr>
+	  <th>Username</th>
+	  <td><input name="username" size="20" maxlength="20" /></td>
+	</tr>
+	<tr>
+	  <th>Password</th>
+	  <td><input name="pass1" size="20" maxlength="20" type="password" /></td>
+	</tr>
+	<tr>
+	  <th>Confirm Password</th>
+	  <td><input name="pass2" size="20" maxlength="20" type="password" /></td>
+	</tr>
+	<tr>
+	  <th colspan="2" style="text-align:center">
+	    <input type="submit" value="Create Account" />
+	  </th>
+	</tr>
+      </table>
+    </form>
+    {{ footer | safe }}
+  </body>
+</html>

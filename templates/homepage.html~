@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Served</title>
+  </head>
+  <body>
+    <center>
+      <h1>Served</h1>
+      <br />
+      <h3>Personal Restaurant Suggestions at your Fingertips!</h3>
+    </center>
+    
+    <hr />
+
+    <div id="suggestion">Loading restaurant suggestions...</div>
+
+    <script type="text/javascript" src="static/logic.js"></script>
+  </body>
+</html>

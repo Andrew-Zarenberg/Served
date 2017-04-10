@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title>Served</title>
+  </head>
+  <body>
+    {{ header | safe }}
+    Welcome to Served
+    {{ footer | safe }}
+  </body>
+</html>

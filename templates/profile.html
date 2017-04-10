@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Served</title>
+    <script type="text/javascript" src="static/jquery-3.2.0.min.js"></script>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    {{ header | safe }}
+    <center>
+      <h1>My Profile</h1>
+      <a href="/">Back to Restaurant Suggestions</a>
+    </center>
+        
+    <hr />
+
+    <div class="box">
+      {{ profile | safe }}
+    </div>
+
+    {{ footer | safe }}
+
+    <script type="text/javascript" src="static/logic.js"></script>
+  </body>
+</html>
