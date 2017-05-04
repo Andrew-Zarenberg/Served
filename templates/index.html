@@ -1,24 +1,48 @@
 <html>
   <head>
     <title>Served</title>
-    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
   </head>
   <body>
-    {{ header | safe }}
 
-    <center>
-      <h1>Served</h1>
-      <h3>Personal Restaurant Suggestions at your Fingertips!</h3>
-    </center>
+    <nav class="navbar navbar-inverse fixed-top" style="margin-bottom:0">
+      <div class="container">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/">Served</a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <form class="navbar-form navbar-right" method="post" action="login">
+	    <div class="form-group">
+	      <input type="text" placeholder="Username" class="form-control" name="username">
+	    </div>
+	    <div class="form-group">
+	      <input type="password" placeholder="Password" class="form-control" name="password">
+	    </div>
+	    <button type="submit" class="btn btn-success">Sign In</button>
+	    <a href="register" class="btn btn-success">Register</a>
+	  </form>
+	</div>
+      </div>
+    </nav>
 
-    <hr />
-
-    <div class="box">
-      Information box
+    <div class="jumbotron">
+      <div class="container">
+	<h1>Served</h1>
+	<p>Personal restaurant suggestions at your fingertips!</p>
+      </div>
     </div>
 
+    <div class="container">
+      <div class="row">
+	<div class="col-md-4">
+	  <h2>Intelligent Suggestions</h2>
+	  <p>
+	    Our intelligent algorithm gets to know and understand what type of food you like to eat.
+	    Based on this, personal suggestions are tailored to each individual user.
+	    <p>
+	      <a class="btn btn-default" href="register" role="button">Register a free account &raquo;</a>
+	    </p>
+	  </p>
 
-
-    {{ footer | safe }}
   </body>
 </html>

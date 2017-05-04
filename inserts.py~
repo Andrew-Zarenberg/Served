@@ -252,7 +252,7 @@ RESTAURANTS = [
             "http://travelupdate.boardingarea.com/wp-content/uploads/2014/08/IMG_8681.jpg",
             "http://cdn.chilledmagazine.com/wp-content/uploads/2015/07/Fresh-Dishes-from-Roccos-Tacos.jpg",
             "https://media-cdn.tripadvisor.com/media/photo-s/0e/89/cd/91/exterior-shot-of-rocco.jpg" ]
-     ,"Andrew"],
+     ], "Andrew",
 
 
 
@@ -324,7 +324,7 @@ RESTAURANTS = [
             "https://s3-media1.fl.yelpcdn.com/bphoto/HOY94WqrdSmVwxBeoiy54A/348s.jpg",
             "http://smartassdesign.imgix.net/imgr/Domo-Taco-2-2x.jpg?fm=jpg&auto=compress,enhance,format&w=1200",
             "https://s3-media2.fl.yelpcdn.com/bphoto/GLMHpzPubW-mpfRkix5QvA/348s.jpg" ]
-         ,"Andrew"],
+         ], "Andrew",
 
         ["Brooklyn Brewhouse", "229 Duffield St, Brooklyn, NY 11201", "Downtown Brooklyn", "American", [
             "http://s3.amazonaws.com/downtownbrooklyn/imgr/listings/brooklyn-brewhouse.jpg",

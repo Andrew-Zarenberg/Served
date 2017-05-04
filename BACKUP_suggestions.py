@@ -2,7 +2,6 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from flask import session
 import random
-import time
 
 client = MongoClient()
 
@@ -30,7 +29,6 @@ RANDOM_IMAGES = [
 
 def format_html(rest):
 
-    """
     # TEMPORARY --- ONLY FOR TESTING
     if len(rest["pictures"]) == 0:
         pictures = []
@@ -39,9 +37,6 @@ def format_html(rest):
     else:
         pictures = rest["pictures"]
     # end TEMPORARY
-    """
-
-    pictures = rest["pictures"]
 
     ratings = db.rating.find({"restaurant": rest["_id"]})
     ratings_count = ratings.count()
@@ -58,13 +53,13 @@ def format_html(rest):
     ratings_num *= 10
     
 
-    r = '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">'
+    r = '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:481px;">'
 
-    r += '<div id="suggestion_images" style="position:relative"><div class="result"></div><button onclick="prevImage()" id="prevImage" disabled="true" title="Previous Image" class="btn btn-default">&laquo;</button>'
+    r += '<div id="suggestion_images" style="position:relative"><div class="result"></div><button onclick="prevImage()" id="prevImage" disabled="true" title="Previous Image">&lt;</button>'
     
     # Image
     if len(pictures) == 0:
-        r += '<img class="img-rounded" src="http://hardisprayer.com/images/photo_not_available.jpg" width="400px" height="400px" />'
+        r += '<img src="http://hardisprayer.com/images/photo_not_available.jpg" width="400px" height="400px" />'
     else:
         r += '<img id="img0" src="%s" width="400px" height="400px" />'%pictures[0]
 
@@ -72,7 +67,7 @@ def format_html(rest):
         r += '<img id="img%d" src="%s" width="400px" height="400px" style="display:none" />'%(
             x, pictures[x])
 
-    r += '<button onclick="nextImage()" id="nextImage" title="Next Image" class="btn btn-default">&raquo;</button></div>'
+    r += '<button onclick="nextImage()" id="nextImage" title="Next Image">&gt;</button></div>'
 
     # Name
     r += '<table cellspacing="0" class="info"><tr><td class="name" colspan="3"><strong>%s</strong>, %s</td></tr>'%(rest["name"], rest["category"])
@@ -104,79 +99,7 @@ def format_html(rest):
 
     return r
 
-def next_restaurant(nabe):
-    return next_restaurant_nodup(nabe)
-    last_reset = db.user.find({"username": session["username"]})
-    total_rated = db.rating.find({"username": session["username"],
-                                  "time": {"$gt": last_reset[0]["time"]}})
-
-    print(str(total_rated.count()),"-",str(db.restaurants.find().count()))
-    if total_rated.count() == db.restaurants.find().count():
-        print("You have rated all restaurants.")
-        
-
-def next_restaurant_nodup(nabe):
-    last_reset = db.user.find({"username": session["username"]})
-    already_rated = db.rating.find({"username": session["username"],
-                                    "time": {"$gt": last_reset[0]["time"]}})
-
-    if already_rated.count() == db.restaurants.find().count():
-        print("You already rated all restaurants.")
-
-
-
-    already_rated_list = []
-    for x in already_rated:
-        already_rated_list.append(x["restaurant"])
-
-    print("len: "+str(already_rated.count()))
-    print(str(already_rated_list))
-    # list of categories
-    categories = []
-    total_len = 0
-    rests = db.restaurants.find({"neighborhood": nabe, "_id": {"$nin": already_rated_list}} )
-
-    if rests.count() <= 1:
-        in_nabe = db.restaurants.find({"neighborhood": nabe})
-        if in_nabe.count() == 0:
-            return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">There are no entries for restaurants in this neighborhood.<br /><br />Perhaps try a different neighborhood?</div>'
-        elif in_nabe.count() == 1:
-            return format_html(in_nabe[0])
-        else:
-            return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">You have rated all restaurants.<br /><br /><a href="#" onclick="seeRepeats()">See restaurants you have already rated?</a></div>'
-    for x in rests:
-        if x["category"] not in categories:
-            user_times = max(1,db.rating.find({"username": session["username"], "category": x["category"], "type":1}).count())
-            total_len += user_times
-            categories.append([x["category"],user_times])
-
-    next_suggestion = random.randrange(0, total_len)
-
-    chosen_cat = ""
-    
-    cur_num = 0
-    for x in categories:
-        cur_num += x[1]
-
-        if cur_num <= next_suggestion:
-            chosen_cat = x[0]
-            
-
-    print("Suggestion: %s"%chosen_cat)
-
-    r = db.restaurants.find({"category": chosen_cat})
-
-    if r.count() == 0:
-        return next_restaurant(nabe)
-
-    restaurant = r[random.randrange(0, r.count())]
-
-    return format_html(restaurant)
-
-
-
-
-def next_restaurant2():
+def next_restaurant():
     # list of categories
     categories = []
     total_len = 0
@@ -202,33 +125,22 @@ def next_restaurant2():
     print("Suggestion: %s"%chosen_cat)
 
     r = db.restaurants.find({"category": chosen_cat})
-
     restaurant = r[random.randrange(0, r.count())]
-
-    last_rated = db.rating.find({"restaurant": restaurant["_id"],
-                                 "username": session["username"]})
-
-    if last_rated.count() > 0:
-        my_last_time = db.user.find({"username":session["username"]})
-
-        if(last_rated[0]["time"] > my_last_time[0]["time"]):
-            return next_restaurant2()
-
     return format_html(restaurant)
 
 
 # rating_type = Like or Dislike
 def rate(restaurant_id, rating_type):
     if "username" not in session or session["username"] == "":
-        return "f1"
+        return false
     if rating_type != "Like" and rating_type != "Dislike":
-        return "f2"
+        return False
     else:
         try:
             r = db.restaurants.find({"_id": ObjectId(restaurant_id)})
             
             if r.count() == 0:
-                return "f3"
+                return False
 
             rating = 1
             if rating_type == "Dislike":
@@ -243,7 +155,6 @@ def rate(restaurant_id, rating_type):
                 new_entry["username"] = exists[0]["username"]
                 new_entry["type"] = float(exists[0]["type"]*exists[0]["num_ratings"]+rating)/(exists[0]["num_ratings"]+1)
                 new_entry["num_ratings"] = exists[0]["num_ratings"]+1
-                new_entry["time"] = time.time()
 
                 db.rating.update({"restaurant": ObjectId(restaurant_id),
                                   "username": session["username"]},
@@ -253,12 +164,11 @@ def rate(restaurant_id, rating_type):
                                   "category": r[0]["category"],
                                   "username": session["username"],
                                   "type": rating,
-                                  "num_ratings": 1,
-                                  "time": time.time()})
+                                  "num_ratings": 1})
 
             return True
         except:
-            return "f4"
+            return False
         
 
 def superlike(restaurant_id):
@@ -268,8 +178,6 @@ def superlike(restaurant_id):
         rest = db.restaurants.find({"_id": ObjectId(restaurant_id)})
 
         if rest.count() != 0:
-
-            rate(restaurant_id, "Like")
 
             db.superlike.insert({"username": session["username"],
                                  "name": rest[0]["name"],
@@ -283,7 +191,7 @@ def superlike(restaurant_id):
 
 def generate_superlike_table():        
     # Create the new html list output
-    r = '<table class="table table-bordered" cellspacing="0" id="eatlist"><tr><th class="header"><h4>"I want to eat here!" list</h4></th></tr><tr><th style="text-align:center;"><a href="javascript:void(0)" onclick="clearSuperlikes()">Clear all entries</a></th></tr>'
+    r = '<table cellspacing="0" id="eatlist"><tr><th class="header">I want to eat here!</th></tr><tr><th style="text-align:center;"><a href="javascript:void(0)" onclick="clearSuperlikes()">Clear all entries</a></th></tr>'
     for x in db.superlike.find({"username": session["username"]}):
         r += '<tr><td><div class="remove_superlike" style="float:left;" onclick="removeSuperlike(\'%s\')">&#10060</div><span><strong>%s</strong>, %s<br /><a href="https://google.com/maps/place/%s" target="_blank">%s</a></span></td></tr>'%(x["restaurant"], x["name"], x["category"], x["address"], x["address"])
 
@@ -292,18 +200,6 @@ def generate_superlike_table():
 
 def clear_superlikes():
     db.superlike.remove({"username": session["username"]})
-
-    cur = db.user.find({"username": session["username"]})
-
-    new_entry = {}
-    new_entry["username"] = cur[0]["username"]
-    new_entry["password"] = cur[0]["password"]
-    new_entry["time"] = time.time()
-
-    db.user.update({"username": session["username"]},
-                   new_entry)
-
-
     return generate_superlike_table()
 
 def remove_superlike(restaurant_id):
@@ -311,17 +207,6 @@ def remove_superlike(restaurant_id):
                          "restaurant": restaurant_id})
     return generate_superlike_table()
 
-
-def see_repeats():
-    cur = db.user.find({"username": session["username"]})
-
-    new_entry = {}
-    new_entry["username"] = cur[0]["username"]
-    new_entry["password"] = cur[0]["password"]
-    new_entry["time"] = time.time()
-
-    db.user.update({"username": session["username"]},
-                   new_entry)
 
 
     

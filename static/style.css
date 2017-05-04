@@ -25,10 +25,10 @@ a:hover { text-decoration:none; }
     text-align:center;
 }
 
+
 #suggestion {
     padding:5px;
-    border:5px solid black;
-    background:white;
+    border:5px solid #cccccc;
 }
 
 #suggestion_images .result {
@@ -89,6 +89,7 @@ a:hover { text-decoration:none; }
     text-decoration:none;
 }
 
+/*
 #eatlist {
     border:2px solid black;
 }
@@ -101,7 +102,7 @@ a:hover { text-decoration:none; }
     background:white;
     margin-left:25px;
     width:300px;
-}
+}*/
 
 .box {
     width:50%;

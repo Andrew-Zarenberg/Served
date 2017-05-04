@@ -47,20 +47,30 @@
 
 
     <form action="register" method="post" id="register_form">
+      <table cellspacing="0" class="box" style="width:25%">
 
-      <center>
 	{% if return_code %}
-	Error: {{ return_code }}
+	<tr><th colspan="2" style="text-align:center;">Error: {{ return_code }}</th></tr>
 	{% endif %}
 
-	<input name="username" size="20" maxlength="20" placeholder="Username" />
-	<br />
-	<input name="pass1" size="20" maxlength="20" type="password" placeholder="Password" />
-	<br />
-	<input name="pass2" size="20" maxlength="20" type="password" placeholder="Confirm Password" />
-	<br />
-	<input type="submit" value="Create Account" />
-	</center>
+	<tr>
+	  <th>Username</th>
+	  <td><input name="username" size="20" maxlength="20" /></td>
+	</tr>
+	<tr>
+	  <th>Password</th>
+	  <td><input name="pass1" size="20" maxlength="20" type="password" /></td>
+	</tr>
+	<tr>
+	  <th>Confirm Password</th>
+	  <td><input name="pass2" size="20" maxlength="20" type="password" /></td>
+	</tr>
+	<tr>
+	  <th colspan="2" style="text-align:center">
+	    <input type="submit" value="Create Account" />
+	  </th>
+	</tr>
+      </table>
     </form>
     {{ footer | safe }}
   </body>

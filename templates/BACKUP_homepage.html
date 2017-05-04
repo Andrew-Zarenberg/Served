@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Served</title>
+    <script type="text/javascript" src="static/jquery-3.2.0.min.js"></script>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    {{ header | safe }}
+    <center>
+      <h1>Served</h1>
+      <h3>Personal Restaurant Suggestions at your Fingertips!</h3>
+    </center>
+    
+    <hr />
+
+    <table style="width:100%"><tr><td style="vertical-align:top;">
+    <div id="superlike_body" style="float:left;">
+      {{ superlike | safe }}
+    </div>
+
+    </td><td style="vertical-align:top;">
+
+    <div id="suggestion_body" style="float:left;">
+      {{ restaurant | safe }}
+    </div>
+
+    </td></tr></table>
+
+    {{ footer | safe }}
+
+    <script type="text/javascript" src="static/logic.js"></script>
+  </body>
+</html>

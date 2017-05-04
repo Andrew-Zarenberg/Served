@@ -8,7 +8,6 @@ client = MongoClient()
 
 db = client.Served
 
-nab = ["Downtown Brooklyn", "Williamsburg", "Upper East Side", "Upper West Side", "Midtown East"]
 
 def register(username, pass1, pass2):
     if username == "" or pass1 == "" or pass2 == "":
@@ -46,26 +45,16 @@ def my_profile():
     r += '<div>So far, I have seen <strong>%d</strong> restaurant suggestions.</div><br />'%total_rest
 
     #r += '<table id="preferences" cellspacing="0"><tr><th colspan="2"><strong>My Restaurant Preferences</strong></th></tr>'
-    r += '<table class="table" cellspacing="0"><tr><th colspan="2"><strong>Restaurant Categores Like Percentages</strong></th></tr>'
+    r += '<table class="table" cellspacing="0"><tr><th colspan="2"><strong>My Restaurant Preferences</strong></th></tr>'
 
     cats = []
     for x in dab:
         if [x["category"]] not in cats:
             cats.append([x["category"]])
 
-    """
     for x in range(0,len(cats)):
         perc = db.rating.find({"username": session["username"], "category": cats[x][0], "type":1}).count()
         cats[x].append(float(perc)/total*100)
-
-    """
-    for x in range(0, len(cats)):
-        total = 0
-        perc = db.rating.find({"username": session["username"], "category": cats[x][0]})
-        for y in perc:
-            total += y["type"]
-
-        cats[x].append(float(total*100)/perc.count())
 
     a = sorted(cats, key=itemgetter(1), reverse=True)
 
@@ -106,28 +95,7 @@ def my_restaurants():
         else:
             r += '<tr><td>%d</td><td><a href="view_restaurant?id=%s">%s</a></td><td>%s</td><td style="text-align:center;">%.1f<br /><small>%d ratings</small></td></tr>'%(x+1, rest["_id"], rest["name"], rest["category"], ratings_num, ratings_count)
 
-    nabes = '<select name="neighborhood">'
-
-    for x in nab:
-        nabes += '<option value="%s">%s</option>'%(x,x)
-
-    nabes += '</select>'
-
-
-    cat = '<select name="category">'
-    cats = []
-    cc = db.restaurants.find()
-    for x in cc:
-        if x["category"] not in cats:
-            cats.append(x["category"])
-
-    cats.sort()
-
-    for x in cats:
-        cat += '<option value="%s">%s</option>'%(x,x)
-    cat += '</select>'
-
-    return {"rest":r, "nabes":nabes, "cat":cat}
+    return r
 
 
 def view_restaurant(n):
@@ -137,7 +105,7 @@ def view_restaurant(n):
     r = ""
     for x in rest[0]["pictures"]:
         count += 1
-        r += '<tr><td><br /><strong>Image #%d</strong> <a href="delete_restaurant_image?id=%s&img=%s" class="btn btn-danger">Delete Image</a><br /><br /><img src="%s" width="400px" height="400px" /></td></tr>'%(count, n, x, x)
+        r += '<tr><td><br /><strong>Image #%d</strong> <a href="delete_restaurant_image?id=%s&img=%s" class="btn btn-danger">Delete Image</a><br /><br /><img src="%s" width="400px" height="400px" /></td></tr>'%(count, x, n, x)
         #r += '<tr><td>%d</td><td><img src="%s" width="400px" height="400px" /></td><td><a href="delete_restaurant_image?id=%s&img=%s" class="btn btn-danger">Delete Image</a></td></tr>'%(count, x, n, x)
 
     return {"name": rest[0]["name"],
@@ -173,36 +141,3 @@ def delete_restaurant_image(n, url):
         return True
 
     return False
-
-
-def nabes(n):
-
-    if n in nab:
-        neb = n
-    else:
-        neb = nab[0]
-
-    r = '<div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Neighborhood: %s <span class="caret"></span></button><ul class="dropdown-menu">'%neb
-
-    for x in nab:
-        r += '<li><a href="/?neighborhood=%s">%s</a></li>'%(x,x)
-
-    r += '</ul></div>'
-
-    return r
-
-
-def add_restaurant(name, address, category, neighborhood):
-    k = db.restaurants.insert({"name":name,
-                               "address":address,
-                               "neighborhood":neighborhood,
-                               "category":category,
-                               "pictures":[],
-                               "ratings":[],
-                               "creator":session["username"]})
-    print("EDROFGYUIDIDFG: %s"%k)
-
-
-def delete_restaurant(n):
-    db.restaurants.remove({"_id":ObjectId(n), "creator":session["username"]})
-    return True

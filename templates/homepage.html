@@ -2,31 +2,53 @@
   <head>
     <title>Served</title>
     <script type="text/javascript" src="static/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="http://getbootstrap.com/2.0.4/assets/js/bootstrap-dropdown.js"></script>
     <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
   </head>
   <body>
-    {{ header | safe }}
-    <center>
+
+    <nav class="navbar navbar-inverse fixed-top" style="margin-bottom:0">
+      <div class="container">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/">Served</a>
+	  <a href="profile" class="navbar-brand">My Profile</a>
+	  <a href="my_restaurants" class="navbar-brand">My Restaurants</a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <form class="navbar-form navbar-right">
+	    <a href="logout" class="btn btn-danger">Sign Out</a>
+	  </form>
+	</div>
+      </div>
+    </nav>
+
+
+    <div class="container">
       <h1>Served</h1>
-      <h3>Personal Restaurant Suggestions at your Fingertips!</h3>
-    </center>
+      <p>Personal Restaurant Suggestions at your Fingertips!</p>
+      <p> {{ neighborhoods | safe }}</p>
+    </div>
     
-    <hr />
+    <div class="container">
 
-    <table style="width:100%"><tr><td style="vertical-align:top;">
-    <div id="superlike_body" style="float:left;">
-      {{ superlike | safe }}
+      <div class="row">
+	<div class="col-md-3">
+
+	  <div id="superlike_body">
+	    {{ superlike | safe }}
+	  </div>
+
+	</div>
+	<div class="col-md-9">
+
+	  <div id="suggestion_body">
+	    {{ restaurant | safe }}
+	  </div>
+
+	</div>
+      </div>
     </div>
-
-    </td><td style="vertical-align:top;">
-
-    <div id="suggestion_body" style="float:left;">
-      {{ restaurant | safe }}
-    </div>
-
-    </td></tr></table>
-
-    {{ footer | safe }}
 
     <script type="text/javascript" src="static/logic.js"></script>
   </body>

@@ -30,7 +30,6 @@ RANDOM_IMAGES = [
 
 def format_html(rest):
 
-    """
     # TEMPORARY --- ONLY FOR TESTING
     if len(rest["pictures"]) == 0:
         pictures = []
@@ -39,9 +38,6 @@ def format_html(rest):
     else:
         pictures = rest["pictures"]
     # end TEMPORARY
-    """
-
-    pictures = rest["pictures"]
 
     ratings = db.rating.find({"restaurant": rest["_id"]})
     ratings_count = ratings.count()
@@ -104,8 +100,8 @@ def format_html(rest):
 
     return r
 
-def next_restaurant(nabe):
-    return next_restaurant_nodup(nabe)
+def next_restaurant():
+    return next_restaurant_nodup()
     last_reset = db.user.find({"username": session["username"]})
     total_rated = db.rating.find({"username": session["username"],
                                   "time": {"$gt": last_reset[0]["time"]}})
@@ -115,7 +111,7 @@ def next_restaurant(nabe):
         print("You have rated all restaurants.")
         
 
-def next_restaurant_nodup(nabe):
+def next_restaurant_nodup():
     last_reset = db.user.find({"username": session["username"]})
     already_rated = db.rating.find({"username": session["username"],
                                     "time": {"$gt": last_reset[0]["time"]}})
@@ -134,16 +130,9 @@ def next_restaurant_nodup(nabe):
     # list of categories
     categories = []
     total_len = 0
-    rests = db.restaurants.find({"neighborhood": nabe, "_id": {"$nin": already_rated_list}} )
-
+    rests = db.restaurants.find({"_id": {"$nin": already_rated_list}} )
     if rests.count() <= 1:
-        in_nabe = db.restaurants.find({"neighborhood": nabe})
-        if in_nabe.count() == 0:
-            return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">There are no entries for restaurants in this neighborhood.<br /><br />Perhaps try a different neighborhood?</div>'
-        elif in_nabe.count() == 1:
-            return format_html(in_nabe[0])
-        else:
-            return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">You have rated all restaurants.<br /><br /><a href="#" onclick="seeRepeats()">See restaurants you have already rated?</a></div>'
+        return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">You have rated all restaurants.<br /><br /><a href="#" onclick="seeRepeats()">See restaurants you have already rated?</a></div>'
     for x in rests:
         if x["category"] not in categories:
             user_times = max(1,db.rating.find({"username": session["username"], "category": x["category"], "type":1}).count())
@@ -167,7 +156,7 @@ def next_restaurant_nodup(nabe):
     r = db.restaurants.find({"category": chosen_cat})
 
     if r.count() == 0:
-        return next_restaurant(nabe)
+        return next_restaurant()
 
     restaurant = r[random.randrange(0, r.count())]
 

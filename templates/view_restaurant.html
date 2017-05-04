@@ -22,15 +22,31 @@
 
     <div class="jumbotron">
       <div class="container">
-	<h1>My Profile</h1>
-	<h3><a href="/">Back to Restaurant Suggestions</a></h3>
+	<h1>{{ name }}</h1>
+	<h2>{{ category }}</h2><br />
+	<h4><a href="my_restaurants">Back to My Restaurants</a></h4>
       </div>
     </div>
 
+    <div style="text-align:center;"><a class="btn btn-danger" href="#" onclick="deleteRestaurant()">Delete Restaurant</a></div><br />
+
     <div class="panel panel-default" style="width:50%;margin-left:auto;margin-right:auto;">
-      <div class="panel-heading">
-	{{ profile | safe }}
-      </div>
+      <div class="panel-heading">Restaurant Images</div>
+      <table class="table">
+	<tr>
+	  <th>{{ added | safe }}
+	    <strong>Add Image: (by URL)</strong><br />
+	    <form action="add_restaurant_image" method="post">
+	      <div class="form-group">
+		<input type="hidden" name="id" value="{{ id }}" />
+		<input type="text" style="width:75%;" name="url" placeholder="Image URL" />
+		<button type="submit" class="btn btn-success">Add Image</button>
+	      </div>
+	    </form>
+	  </th>
+	</tr>
+	{{ rest | safe }}
+      </table>
     </div>
 
     <script type="text/javascript" src="static/logic.js"></script>

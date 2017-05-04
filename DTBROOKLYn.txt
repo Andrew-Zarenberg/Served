@@ -1,0 +1,153 @@
+["Rocco's Tacos", "339 Adams St, Brooklyn, NY 11201", "Downtown Brooklyn", "Mexican", [
+	"http://travelupdate.boardingarea.com/wp-content/uploads/2014/08/IMG_8681.jpg",
+	"http://cdn.chilledmagazine.com/wp-content/uploads/2015/07/Fresh-Dishes-from-Roccos-Tacos.jpg",
+	"https://media-cdn.tripadvisor.com/media/photo-s/0e/89/cd/91/exterior-shot-of-rocco.jpg" ]
+],
+
+["Junior's Restaurant", "386 Flatbush Ave Ext, Brooklyn, NY 11201", "Downtown Brooklyn", "Diner", [
+	"http://vp.cdn.cityvoterinc.com/GetImage.ashx?img=00/00/00/02/25/75/22575-556377.jpg",
+	"https://blankslatepages.s3.amazonaws.com/54d8d6d95b7d6-4fc5c4dafc853d23410f6a706700cd7f.jpg",
+	"http://www4.pictures.zimbio.com/gi/Brooklyn+Famous+Junior+Restaurant+Sold+Developer+YzQbBj6bSwZl.jpg" ]
+],
+
+["Yaso Tangbao", "148 Lawrence St, Brooklyn, NY 11201", "Downtown Brooklyn", "Shanghainese", [
+	"http://s3.amazonaws.com/downtownbrooklyn/imgr/listings/yaso-tangbao.jpg",
+	"http://yasotangbao.com/img/slide_small1.png",
+	"https://brklynhospitality.files.wordpress.com/2016/05/7461c866-4d3d-4523-8412-5dc83c93782b.jpg",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/YVrNtlNJd3pciib539PV1Q/o.jpg" ]
+],
+
+["Hill Country Barbecue Market", "345 Adams Street (on Willoughby Plaza), Brooklyn, NY 11201", "Downtown Brooklyn", "Barbecue", [
+	"https://resizer.otstatic.com/v2/photos/large/24005275.jpg",
+	"https://www.giltcity.com/images/share/uploads/0000/0001/5532/155324236/orig.jpg",
+	"http://s3.amazonaws.com/downtownbrooklyn/imgr/listings/hill-country-barbecue-market.jpg" ]
+],
+
+["Myrtle & Gold", "343 Gold St, Brooklyn, NY 11201", "Downtown Brooklyn", "American", [
+	"http://3f60kb4wap2qw7kd14ry4wy1.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/20150611_160642.jpg",
+	"https://s3-media1.fl.yelpcdn.com/bphoto/vz4xwOUZJsXDhoAxCryorQ/348s.jpg",
+	"http://blog.whereyoueat.com/wp-content/uploads/2015/10/American-Cafe-in-Downtown-Brooklyn-300x225.jpg",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/V1lmHXW1rvP3yhYAokHdhg/348s.jpg" ]
+],
+
+["Pollo D'Oro", "306 Gold St, Brooklyn, NY 11201", "Downtown Brooklyn", "Peruvian", [
+	"https://media-cdn.tripadvisor.com/media/photo-s/06/ce/c9/2e/pollo-d-oro.jpg",
+	"https://media-cdn.tripadvisor.com/media/photo-s/08/46/92/1d/pollo-d-oro.jpg",
+	"https://s3-media1.fl.yelpcdn.com/bphoto/KyrnVWlXLFKkgdt5RoJ6cA/348s.jpg" ]
+],
+
+["Forno Rosso", "327 Gold St, Brooklyn, NY 11201", "Downtown Brooklyn", "Italian", [
+"http://nebula.wsimg.com/808673d579f82b714c8817a42932d75d?AccessKeyId=0F80301A12A3736C97F6&disposition=0&alloworigin=1",	"http://79eeea381619f313d82e-993cdc17da461fcae971e861a6f98752.r94.cf1.rackcdn.com/chicago/venue/image/1000004377/30341-Forno.jpg",
+"http://nebula.wsimg.com/6c3ec0979618bfaf11f6c252e21f8dd4?AccessKeyId=0F80301A12A3736C97F6&disposition=0&alloworigin=1" ]
+],
+
+["Bijan's", "81 Hoyt St, Brooklyn, NY 11201", "Downtown Brooklyn", "Italian", [
+	"https://resizer.otstatic.com/v2/profiles/legacy/147940.jpg",
+	"https://s3-media1.fl.yelpcdn.com/bphoto/XiVzej2h25d60cq370d-sA/348s.jpg",
+"http://pages.blankslate.com/scripts/timthumb.php?w=450&h=400&zc=1&src=https://blankslatepages.s3.amazonaws.com/bijan%27s-6b79a77180e9ec3a7ca351ebe54641a2-1400791524-bijan%27s-4.jpg" ]
+],
+
+["The Wei", "30 Dekalb Ave, Brooklyn, NY 11201", "Downtown Brooklyn", "Chinese", [
+	"https://s3-media1.fl.yelpcdn.com/bphoto/bAsLn1UuUhornsm0h-_3sQ/348s.jpg",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/fkjzVN8tYAeZ1PFe8oMW9A/348s.jpg",
+	"https://s3-media3.fl.yelpcdn.com/bphoto/MAN5ru1Y6Lz9AEJafNPL5g/348s.jpg",
+	"http://thewei.nyc/wp-content/uploads/2014/05/front-2048x853.jpg" ]
+],
+
+["Broccolino", "213 Smith St, Brooklyn, NY 11201", "Downtown Brooklyn", "Italian", [
+	"https://assets.dnainfo.com/photo/2016/10/1476298988-276921/larger.jpg",
+	"https://pbs.twimg.com/media/C7J-rmsXUAI3X--.jpg",
+	"https://resizer.otstatic.com/v2/photos/large/24910496.jpg",
+	"https://pbs.twimg.com/media/C8CacXZXUAELvBj.jpg" ]
+],
+
+["Jun Shokudo", "306 Gold St, Brooklyn, NY 11201", "Downtown Brooklyn", "Japanese", [
+	"https://media-cdn.tripadvisor.com/media/photo-s/0a/45/c7/eb/side.jpg",
+	"https://s3-media3.fl.yelpcdn.com/bphoto/BMzkEBtZNnvTbIm4vyA51w/348s.jpg",
+	"http://www.asianfusion-mag.com/wp-content/uploads/2016/12/Jun_Shokudo_1773_spicy_miso_seafood_udon.jpg",
+	"http://www.asianfusion-mag.com/wp-content/uploads/2016/12/Jun_Shokudo_1814_all_dishes.jpg" ]
+],
+
+["Domo Taco", "66 Willoughby St, Brooklyn, NY 11201", "Downtown Brooklyn", "Asian", [
+	"https://s3-media1.fl.yelpcdn.com/bphoto/HOY94WqrdSmVwxBeoiy54A/348s.jpg",
+	"http://smartassdesign.imgix.net/imgr/Domo-Taco-2-2x.jpg?fm=jpg&auto=compress,enhance,format&w=1200",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/GLMHpzPubW-mpfRkix5QvA/348s.jpg" ]
+],
+
+["Brooklyn Brewhouse", "229 Duffield St, Brooklyn, NY 11201", "Downtown Brooklyn", "American", [
+	"http://s3.amazonaws.com/downtownbrooklyn/imgr/listings/brooklyn-brewhouse.jpg",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/z7kQSJTLBDnOhPbZb6D26Q/ls.jpg",
+	"https://s3-media1.fl.yelpcdn.com/bphoto/0x1si1-hPNxuSN95BqTvPg/o.jpg" ]
+],
+
+["The Juice Box", "114 Dekalb Ave, Brooklyn, NY 11201", "Downtown Brooklyn", "Cafe", [
+	"https://s3-media4.fl.yelpcdn.com/bphoto/pu_kXHGzSkQ2ijMOa4ZmpA/348s.jpg",
+"https://res.cloudinary.com/grubhub/image/upload/w_264,h_198,f_auto,fl_lossy,q_80,b_rgb:000,o_80,c_fill/umh9ibqcp2ufzhavvehe",
+"https://s3-media3.fl.yelpcdn.com/bphoto/M-MH7oSfqgJoxB0q3Fwtsw/348s.jpg" ]
+],
+
+["Amarachi Restaurant", "189 Bridge St, Brooklyn, NY 11201", "Downtown Brooklyn", "Grill", [
+	"https://s3-media4.fl.yelpcdn.com/bphoto/2slDZhvAVXunPhN4h_2NOA/ls.jpg",
+	"http://www.reachfolk.com/wp-content/uploads/2016/09/0_0_0_0_539_303_csupload_67676720.jpg",
+	"https://rdc.rdcimage.com/partner-images/226313/micrositeimage_photo1.jpg" ]
+],
+
+["Golden Fried Dumpling", "192 Duffield St, Brooklyn, NY 11201", "Downtown Brooklyn", "Chinese", [
+	"https://s3-media3.fl.yelpcdn.com/bphoto/zuvdJyknn5vGElyxkbyh2Q/348s.jpg",
+	"https://media-cdn.tripadvisor.com/media/photo-s/03/2b/b8/60/golden-fried-dumplings.jpg",
+	"https://b.zmtcdn.com/data/pictures/9/17763779/df75b2bfa96de0e882912c8884fefb75.jpg" ]
+],
+
+["Ganso Ramen", "25 Bond St, Brooklyn, NY 11201", "Downtown Brooklyn", "Japanese", [
+	"http://gansonyc.com/wordpress/wp-content/gallery/photos/ganso-kakuni-ramen.jpg",
+	"http://smartassdesign.imgix.net/imgr/ganso-ramen.jpg?fm=jpg&auto=compress,enhance,format&w=1200",
+	"https://s3-media3.fl.yelpcdn.com/bphoto/LQtFPZrtPPrTBYdlE4qszQ/348s.jpg" ]
+],
+
+["Kimoto Rooftop Bar & Lounge", "216 Duffield St, Brooklyn, NY 11201", "Downtown Brooklyn", "Asian", [
+	"https://media-cdn.tripadvisor.com/media/photo-s/0d/74/dd/1a/summer-movie-nights.jpg",
+	"http://images1.villagevoice.com/imager/u/745xauto/7762992/kimoto_spam_sushi_dog_ext_lo_by_michael_tulipan.jpg",
+	"https://d3tv8y14ogpztx.cloudfront.net/pulses/images/000/029/226/wide_product/kimoto-inside.jpg" ]
+],
+
+["La Defense Bistro", "2 MetroTech Center, Brooklyn, NY 11201", "Downtown Brooklyn", "French", [
+	"https://s3-media4.fl.yelpcdn.com/bphoto/048D1Jgt7c_mJ8cwCbBbyg/348s.jpg",
+"http://assets.nydailynews.com/polopoly_fs/1.1980623.1413826995!/img/httpImage/image.jpg_gen/derivatives/article_750/aline26f-13-web.jpg",
+	"https://media-api.xogrp.com/images/4dd0c4c7-3121-4f11-b7d1-41b840e80997~rs_2001.480.fit.jpg" ]
+],
+
+["SUBWAY® Restaurants", "391 Jay St, Brooklyn, NY 11201", "Downtown Brooklyn", "Sandwich", [
+	"https://igx.4sqi.net/img/general/600x600/s4pLQXrlBkUGsJMSnqyoya6tB5-kj__NRSiN28XVP_U.jpg",
+	"https://igx.4sqi.net/img/general/600x600/14FCWPATN1K13OFQ4VF5ZIHXDC45NDHIYQV4LKWU051YBP25.jpg",
+	"https://s3-media3.fl.yelpcdn.com/bphoto/aV6V0yZlOi_wUbjXaZDS7A/ls.jpg" ]
+],  
+
+["Brasserie Séoul", " 300 Schermerhorn St, Brooklyn, NY 11217", "Downtown Brooklyn", "French", [
+	"https://static1.squarespace.com/static/57055938c6fc08c6df557ec4/57055f5ca3360cc2b0dc52cc/57354ccdc2ea51b32cf79a55/1469476036398/IMG_0956a.jpg?format=1500w",
+	"http://www.nycgo.com/images/venues/13211/brasserie-seoul-han-gyeol-lyu-006__x_large.jpg",
+	"http://www.nycgo.com/images/venues/13211/brasserie-seoul-han-gyeol-lyu-001__x_large.jpg" ]
+],
+
+["Luciano's", "15 MetroTech Center, Brooklyn, NY 11201", "Downtown Brooklyn", "Italian", [
+	"https://s3-media4.fl.yelpcdn.com/bphoto/2PZiAhNjA2-YDHtPdHQlGA/o.jpg",
+	"https://s3-media3.fl.yelpcdn.com/bphoto/joQiqtacsSFWOaeS1pq5EQ/348s.jpg",
+	"https://s3-media1.fl.yelpcdn.com/bphoto/-Ms_ARIrnIA9lkgqlgKChQ/180s.jpg" ]
+],
+
+["Sophie's Cuban Cuisine", "27 Smith St, Brooklyn, NY 11201", "Downtown Brooklyn", "Cuban", [
+	"http://dcdiningguide.com/wp-content/uploads/2014/02/Sophies.jpg",
+	"http://s3.amazonaws.com/downtownbrooklyn/imgr/listings/sophies-cuban-cuisine.jpg",
+	"http://ot-foodspotting-production.s3.amazonaws.com/reviews/1633196/thumb_600.jpg?1335126399" ]
+],
+
+["Buffalo Boss", "400 Jay St, Brooklyn, NY 11201", "Downtown Brooklyn", "Chicken Wings", [
+	"http://whereyoueat.com/images/restaurants/8053/gallery/0001-BG.jpg",
+	"https://s3-media2.fl.yelpcdn.com/bphoto/8I3Fbt5TDQDfolh-WVw2wQ/ls.jpg",	"http://static.wixstatic.com/media/fa0f75_4f0a7fefa2be45d8b240276bd5d93416.jpg_srz_917_300_85_22_0.50_1.20_0.00_jpg_srz" ]
+],
+
+["Souvlaki House", "158 Lawrence St, Brooklyn, NY 11201", "Downtown Brooklyn", "Gyro", [
+	"https://s3-media4.fl.yelpcdn.com/bphoto/AJZ1CAqFXsvKhR66w8Mvug/348s.jpg",
+	"http://cdn2.vox-cdn.com/uploads/chorus_asset/file/968372/jurybrooksouvlaki.0.jpg",
+	"http://www.brooklynpaper.com/assets/photos/38/35/dtg-souvlaki-house-go-there-now-2015-09-04-bk02_z.jpg",
+	"http://assets.nydailynews.com/polopoly_fs/1.2256670.1434148068!/img/httpImage/image.jpg_gen/derivatives/article_750/2line21f-21-web.jpg" ]
+]

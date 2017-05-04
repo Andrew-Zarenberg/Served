@@ -7,7 +7,6 @@ header = ""
 footer = ""#utils.footer()
 
 # This is only fetched through a GET request
-
 @app.route("/see_repeats")
 def see_repeats():
     suggestions.see_repeats()
@@ -15,7 +14,7 @@ def see_repeats():
 
 @app.route("/suggestion")
 def suggestion():
-    return suggestions.next_restaurant(request.args.get("neighborhood"))
+    return suggestions.next_restaurant()
 
 @app.route("/superlike")
 def superlike():
@@ -29,23 +28,10 @@ def superlike_remove_all():
 def superlike_remove():
     return suggestions.remove_superlike(request.args.get("restaurant"))
 
-@app.route("/no_more_rests")
-def no_more_rests():
-    return '<div id="suggestion" style="margin-left:auto;margin-right:auto;width:550px;text-align:center;">You have rated all restaurants.<br /><br /><a href="#" onclick="seeRepeats()">See restaurants you have already rated?</a></div>'
 
 # END GET REQUESTS
 
 # REDIRECTS
-
-@app.route("/delete_restaurant")
-def delete_restaurant():
-    if "username" in session and session["username"] != "":
-        ret_val = user_actions.delete_restaurant(request.args.get("id"))
-        if ret_val == True:
-            return redirect("my_restaurants?deleted=1")
-
-    else:
-        return "<script>window.location='/'</script>" #FIX
 
 @app.route("/add_restaurant_image", methods=["GET", "POST"])
 def add_restaurant_image():
@@ -66,26 +52,13 @@ def delete_restaurant_image():
         ret_val = user_actions.delete_restaurant_image(request.args.get("id"), request.args.get("img"))
 
         if ret_val == True:
-            return redirect("/view_restaurant?deleted=1&id=%s"%(request.args.get("id")))
+            return redirect("/view_restaurant?deleted=1&id=%s"%(request.args.get("id"))))
         else:
             return redirect("/view_restaurant?deleted=-1&id=%s"%(request.args.get("id")))
 
     else:
         return "<script>window.location='/'</script>" #FIX
 
-@app.route("/add_restaurant", methods=["GET","POST"])
-def new_restaurant():
-    if "username" in session and session["username"] != "":
-        name = request.form["name"]
-        address = request.form["address"]
-        cat = request.form["category"]
-        nabe = request.form["neighborhood"]
-
-        user_actions.add_restaurant(name, address, cat, nabe)
-
-        return redirect("/my_restaurants")
-    else:
-        return "<script>window.location='/'</script>" #FIX
 
 
 # END OF REDIRECTS
@@ -101,11 +74,6 @@ def view_restaurant():
             added = '<div class="alert alert-success" role="alert">Image successfully added!</div>'
         elif request.args.get("added") == "-1":
             added = '<div class="alert alert-danger" role="alert">Error adding image.</div>'
-        elif request.args.get("deleted") == "1":
-            added = '<div class="alert alert-success" role="alert">Image successfully deleted!</div>'
-        elif request.args.get("deleted") == "-1":
-            added = '<div class="alert alert-danger" role="alert">Error deleting image.</div>'
-
 
         return render_template("view_restaurant.html", rest=rest["rest"], name=rest["name"], category=rest["category"], id=request.args.get("id"), added=added)
 
@@ -117,7 +85,7 @@ def view_restaurant():
 def my_restaurants():
     if "username" in session and session["username"] != "":
         rest = user_actions.my_restaurants()
-        return render_template("my_restaurants.html", rest=rest["rest"], cat=rest["cat"], nabes=rest["nabes"])
+        return render_template("my_restaurants.html", rest=rest)
 
     return "<script>window.location='/'</script>" #FIX
 
@@ -131,19 +99,13 @@ def profile():
 
 @app.route("/")
 def index():
-    nabes = ["Downtown Brooklyn", "Williamsburg", "Upper East Side", "Upper West Side", "Midtown East"]
     footer = utils.footer()
     if "username" in session and session["username"] != "":
         header = utils.header(session["username"])
 
-        if request.args.get("neighborhood") not in nabes:
-            return redirect("/?neighborhood=%s"%nabes[0])
-
-        nabes = user_actions.nabes(request.args.get("neighborhood"))
-
-        sug = suggestions.next_restaurant(request.args.get("neighborhood"))
+        sug = suggestions.next_restaurant()
         eatlist = suggestions.generate_superlike_table()
-        return render_template("homepage.html", restaurant=sug, superlike=eatlist, header=header, footer=footer, neighborhoods=nabes)
+        return render_template("homepage.html", restaurant=sug, superlike=eatlist, header=header, footer=footer)
     else:
         header = utils.header("")
         return render_template("index.html", header=header, footer=footer)

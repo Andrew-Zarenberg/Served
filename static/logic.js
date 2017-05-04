@@ -1,5 +1,11 @@
 var imgIndex = 0;
-var imgIndexMax = document.getElementById("suggestion_images").getElementsByTagName("img").length-1;
+var imgIndexMax = 0;
+
+var LOCATION = 0;
+
+if(document.getElementById("suggestion_images")){
+    imgIndexMax = document.getElementById("suggestion_images").getElementsByTagName("img").length-1;
+}
 
 function nextImage(){ changeImage(1); }
 function prevImage(){ changeImage(-1); }
@@ -37,10 +43,14 @@ function ratingDown(restaurantId){
 }
 
 function loadNextSuggestion(){
-    $.get("suggestion",function(d){
+    nabe = location.href.split("neighborhood=")[1];
+    $.get("suggestion?neighborhood="+nabe,function(d){
 	$("#suggestion_body").html(d);
+	imgIndex = 0;
+	imgIndexMax = document.getElementById("suggestion_images").getElementsByTagName("img").length-1;
     });
 }
+
 
 function superlike(restaurantId){
     $.get("superlike?restaurant="+restaurantId, function(d){
@@ -56,8 +66,21 @@ function clearSuperlikes(){
     });
 }
 
+function seeRepeats(){
+    $.get("see_repeats", function(){
+	loadNextSuggestion();
+    });
+}
+
 function removeSuperlike(restaurantId){
     $.get("remove_superlike?restaurant="+restaurantId, function(d){
 	$("#superlike_body").html(d);
     });
+}
+
+function deleteRestaurant(){
+    ret_val = confirm("Are you sure you wish to delete this restaurant?");
+    if(ret_val){
+	window.location = "/delete_restaurant?id="+location.href.split("id=")[1];
+    }
 }

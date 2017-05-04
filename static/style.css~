@@ -1,7 +1,121 @@
+body {
+    font-family:Arial;
+    background:#dddddd;
+    margin:0;
+    padding-bottom:100px;
+}
+
+a {
+    color:blue;
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+a:hover { text-decoration:none; }
+
+#top {
+    background:white;
+    border-bottom:2px solid black;
+    padding:20px;
+}
+
+#footer {
+    font-size:10px;
+    margin-top:50px;
+    text-align:center;
+}
+
+#suggestion {
+    padding:5px;
+    border:5px solid black;
+    background:white;
+}
+
+#suggestion_images .result {
+    position:absolute;
+    text-align:center;
+    top:40%;
+    width:100%;
+    font-size:50px;
+    font-weight:bold;
+}
+
+#suggestion_images img {
+    border:1px solid black;
+}
+
 #suggestion button {
-    height:400px;
+    height:402px;
     vertical-align:top;
     font-size:40px;
     font-weight:bold;
-    background:gray;
+}
+
+#suggestion td.name {
+    padding-top:5px;
+    font-size:20px;
+}
+
+#suggestion .info { width:100%; }
+
+#suggestion .ratings { text-align:center; }
+
+#suggestion .ratings .ratings_num {
+    font-weight:bold;
+    font-size:25px;
+}
+
+#suggestion .info td { width:33%; }
+
+#suggestion .dislike, #suggestion .like {
+    vertical-align:top;
+    text-align:center;
+    font-size:50px;
+}
+
+#suggestion .superlike { font-size:50px; }
+
+#suggestion .dislike span, #suggestion .like span, #suggestion .superlike, #eatlist .remove_superlike {
+    cursor:pointer;
+}
+
+#suggestion .address a {
+    color:blue;
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+#suggestion .address a:hover {
+    text-decoration:none;
+}
+
+#eatlist {
+    border:2px solid black;
+}
+
+#eatlist td, #eatlist th { padding:5px; }
+
+#eatlist td { border-top:1px solid black; }
+
+#eatlist {
+    background:white;
+    margin-left:25px;
+    width:300px;
+}
+
+.box {
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    background:white;
+    border:3px solid black;
+    padding:10px;
+}
+
+#preferences { border:1px solid black; }
+
+#preferences th, #preferences td {
+    padding:5px;
+    text-align:left;
+    border-bottom:1px solid black;
 }
